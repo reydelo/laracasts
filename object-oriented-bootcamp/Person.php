@@ -2,9 +2,10 @@
 
 class Person {
 
-  public $name;
+  private $name;
 
-  public $age;
+  // ideally, we want to hide as much information about the class as we can
+  private $age;
 
   public function __construct($name)
   {
@@ -33,7 +34,7 @@ $john = new Person('John Doe');
 
 $john->setAge(30);
 
-// the conditions in setAge() are bypassed by directly setting the age property....
+// now you cannot set this because the age property is private
 $john->age = 3;
 
 var_dump($john->getAge());
